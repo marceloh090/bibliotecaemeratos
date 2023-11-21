@@ -1,3 +1,13 @@
+def adicionar_livro(biblioteca, gastos):
+    nome = input("Nome do livro: ")
+    autor = input("Autor: ")
+    categoria = input("Categoria: ")
+    preco = float(input("Preço: "))
+    biblioteca.append({'nome': nome, 'autor': autor, 'categoria': categoria, 'preco': preco})
+    gastos[0] += preco
+    print("Livro adicionado com sucesso.")
+    salvar_dados(biblioteca)
+
 def extrato_por_categoria(biblioteca):
     categorias = {}
     for livro in biblioteca:
