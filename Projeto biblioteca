@@ -1,3 +1,20 @@
+def extrato_por_categoria(biblioteca):
+    categorias = {}
+    for livro in biblioteca:
+        if livro['categoria'] in categorias:
+            categorias[livro['categoria']].append(livro['nome'])
+        else:
+            categorias[livro['categoria']] = [livro['nome']]
+    for categoria, livros in categorias.items():
+        print(f"Categoria: {categoria}, Livros: {', '.join(livros)}")
+
+def total_gasto(gastos):
+    print(f"Total gasto em livros: R$ {gastos[0]}")
+
+
+
+
+
 def main():
     biblioteca = carregar_dados()
     gastos = [sum(livro['preco'] for livro in biblioteca)]
