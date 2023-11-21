@@ -1,0 +1,30 @@
+def main():
+    biblioteca = carregar_dados()
+    gastos = [sum(livro['preco'] for livro in biblioteca)]
+
+    while True:
+        escolha = mostrar_menu()
+
+        if escolha == 1:
+            adicionar_livro(biblioteca, gastos)
+        elif escolha == 2:
+            visualizar_livros(biblioteca)
+        elif escolha == 3:
+            atualizar_livro(biblioteca)
+        elif escolha == 4:
+            excluir_livro(biblioteca, gastos)
+        elif escolha == 5:
+            visualizar_por_categoria(biblioteca)
+        elif escolha == 6:
+            extrato_por_categoria(biblioteca)
+        elif escolha == 7:
+            total_gasto(gastos)
+        elif escolha == 8:
+            recomendar_livro(biblioteca)
+        elif escolha == 9:
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
